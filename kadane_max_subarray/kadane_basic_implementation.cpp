@@ -6,6 +6,13 @@ using namespace std;
 
 void MaxSubarraySum(vector<int> v, int currentSum, int &maxSum){
   for (int i=0; i<v.size(); i++){
+    /*
+    for (int x: v){
+      currSum= max(x, currSum+x);
+      maxSum= max(currSum, maxSum);
+    }
+    */
+
     currentSum+=v[i];
     maxSum= max(currentSum, maxSum);
     if (currentSum<0){
@@ -16,6 +23,13 @@ void MaxSubarraySum(vector<int> v, int currentSum, int &maxSum){
 
 void MinSubarraySum(vector<int> v, int currentSum, int &minSum){
   for (int i=0; i<v.size(); i++){
+    /*
+    for (int x: v){
+      currSum= min(x, currSum+x);
+      minSum= min(currSum, minSum);
+    }
+    */
+
     currentSum+=v[i];
     minSum= min(currentSum, minSum);
     if (currentSum>0){
